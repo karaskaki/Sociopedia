@@ -3,8 +3,8 @@ import {
   getUser,
   getUserFriends,
   addRemoveFriend,
-} from "../controllers/users.js";
-import { verifyToken } from "../middleware/auth.js";
+} from "../controllers/user.js";
+import { verifyToken } from "../middlewares/auth.js";
 
 const router = express.Router();
 
