@@ -6,10 +6,10 @@ import dotenv from "dotenv";
 import multer from "multer";
 import helmet from "helmet";
 import morgan from "morgan";    
-import Path from "path";
-import { fileURLToPath } from "url";
 import path from "path";
-import register from "./controllers/auth.js"
+import { fileURLToPath } from "url";
+import authRoute from "./routes/auth.js";
+import register from "./controllers/auth.js";
 
 
 // CONFIGURATION
@@ -42,6 +42,8 @@ const upload = multer({storage})
 // ROUTE WITH FILES
 app.post("/auth/register", upload.single("picture"), register)
 
+// ROUTES
+app.use("/auth", authRoute)
 
 
 
